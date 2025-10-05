@@ -1,0 +1,21 @@
+@startuml
+start
+:Initialization;
+repeat
+  :Select fragment 1;
+  :Select fragment 2;
+  if (check whether fragment 1 and fragment 2 are the same) then (yes)
+    :Skip comparison;
+  else (no)
+    if (Atoms are too close?) then (yes)
+      :Return False (Exit);
+      stop
+    else (no)
+      :Continue checking next pair;
+    endif
+  endif
+repeat while (More molecule pairs to check?)
+
+:Return True;
+stop
+@enduml
